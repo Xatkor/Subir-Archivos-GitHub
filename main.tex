@@ -1,0 +1,106 @@
+\documentclass[spanish]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\setlength{\parindent}{0\paperheight}
+\usepackage{color}
+%\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{esint}
+\usepackage{verbatim}
+\usepackage{colortbl}
+\usepackage{babel}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{amssymb, amsmath}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usetikzlibrary{arrows,decorations.markings,plotmarks}
+\selectlanguage{spanish}
+\usepackage{caption}
+\usepackage{circuitikz}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{svg}
+\usepackage{fancybox}
+\usepackage{enumitem}
+\definecolor{verdeodi}{RGB}{53,113,105} %%%%%%%
+\usepackage[font={color=verdeodi,bf},figurename=Fig.,labelfont={it}]{caption}
+\usepackage[most]{tcolorbox}
+\usetikzlibrary{spy}
+\newtcolorbox{fancybox}[1][]{ %%%%%%%
+enhanced,
+boxrule=1pt,arc=8pt,boxsep=0pt,
+left=0.8em,right=0.8em,top=1ex,bottom=1ex,colback=verdeodi!20,colframe=verdeodi,#1}
+
+
+
+\title{Subir archivos a GitHub por terminal}
+
+\begin{document}
+\maketitle
+% Mostrar todo el texto (wrap): Alt + z / option + z
+
+
+\section{Crear repositorio en GitHub web}
+
+Se crea el repositorio nombrandolo igual que la carpeta con los archivos.
+
+\textcolor{red}{NO CREAR UN} \textcolor{orange}{README.md} \textcolor{orange}{.gitignore} 
+
+\section{Copiar el enlace del repositorio}
+
+\section{Crear un README.md y .gitignore}
+
+Para ello en la terminal usamos
+
+\begin{center}
+    \Large\textcolor{blue}{touch README.md} o \Large\textcolor{blue}{touch .gitignore} 
+\end{center}
+
+Modificamos los archivos usando
+
+\begin{center}
+    \Large\textcolor{blue}{open .gitignore} o \Large\textcolor{blue}{open README.md}  
+\end{center}
+
+\section{Comprobar el estado de git dentro del terminal de la carpeta}
+
+\begin{center}
+    \Large{\textcolor{blue}{git status}}    
+\end{center}
+
+\vspace{3mm}
+
+\textcolor{black!50!red!50!}{\textbf{\large Si no hay nada}}
+
+\begin{center}
+    \Large{\textcolor{blue}{git init}}
+    
+    \Large{\textcolor{blue}{git add} \textcolor{green!20!black!80!}{[archivos a copiar]}}
+
+    \small(colocando \textcolor{white!20!blue!80!}{git add .} selecciona todo)
+
+    \small (si se quiere una carpeta poner \textcolor{green!20!black!80!}{nombre-carpeta/})
+
+    \Large{\textcolor{blue}{git remote add origin} \textcolor{green!20!black!80!}{https://github.com/usuario/repositorio.git}}
+\end{center}
+
+\section{Crear un commit con una breve descripcion}
+
+\begin{center}
+    \Large{\textcolor{blue}{ git commit -m `descripcion'}}
+\end{center}
+
+\section{Subir archivos}
+
+\begin{center}
+    \Large{\textcolor{blue}{ git push -u origin master}}
+\end{center}
+
+\end{document}
