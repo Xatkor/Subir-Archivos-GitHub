@@ -8,6 +8,7 @@
 %\usepackage{xcolor}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{amsmath}
+\usepackage{listings}
 \usepackage{graphicx}
 \usepackage{esint}
 \usepackage{verbatim}
@@ -102,5 +103,14 @@ Modificamos los archivos usando
 \begin{center}
     \Large{\textcolor{blue}{ git push -u origin master}}
 \end{center}
+
+\section{Eliminar algo del repositorio}
+
+
+\begin{lstlisting}{language=bash}
+    find . -name ARCHIVO -print0 | xargs -0 git rm -f --ignore-unmatch
+\end{lstlisting}
+
+ 
 
 \end{document}
